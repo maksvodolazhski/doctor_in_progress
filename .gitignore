@@ -5,7 +5,6 @@
 *.sublime*
 npm-debug.*
 
-
 dist/
 node_module s/
 package-lock.json
