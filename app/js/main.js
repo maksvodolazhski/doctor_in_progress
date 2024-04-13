@@ -1,62 +1,120 @@
 $(function () {
+
+// popup header Записаться
+    document.getElementById('open-popup').addEventListener ("click", function () {
+        document.getElementById('my-modal').classList.add('open')
+    })
+
+    document.getElementById('close-popup').addEventListener ("click", function () {
+        document.getElementById('my-modal').classList.remove('open')
+    })
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            document.getElementById('my-modal').classList.remove('open')
+        }
+    });
+
+    document.querySelector('#my-modal .popup-body__content').addEventListener('click', event => {
+        event._isClickWithInModal = true;
+    });
     
-    $('.top-slider__inner').slick({
+    document.getElementById('my-modal').addEventListener('click', event => {
+        if (event._isClickWithInModal) return;
+        event.currentTarget.classList.remove('open');  
+    });
+
+    // popup services Учавствовать
+
+    
+
+    document.getElementById('services-open').addEventListener ("click", function () {
+        document.getElementById('services-popup').classList.add('open')
+    })
+
+    document.getElementById('close-services').addEventListener ("click", function () {
+        document.getElementById('services-popup').classList.remove('open')
+    })
+
+    window.addEventListener('keydown', (e) => {
+        if (e.key === "Escape") {
+            document.getElementById('services-popup').classList.remove('open')
+        }
+    });
+
+    document.querySelector('#services-popup .services-popup__content').addEventListener('click', event => {
+        event._isClickWithInModal = true;
+    });
+    
+    document.getElementById('services-popup').addEventListener('click', event => {
+        if (event._isClickWithInModal) return;
+        event.currentTarget.classList.remove('open');  
+    });
+
+    
+
+    $('.services__inner').slick({
         dots: true,
-        arrows: false,
-        fade: true,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 3,
         autoplay: true,
-        autoplaySpead: 2000
+        slidesToScroll: 1,
+        autoplaySpead: 2000,
+        infinite: true,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 2,
+                    slidesToScroll: 1
+                }
+            }
+        ]
+    });
+    
+    $('.doctors-slide').slick({
+        arrows: true,
+        slidesToShow: 1,
+        slidesToScroll: 1
     });
 
-    $(".star").rateYo({
-        starWidth: "17px",
-        normalFill: "#ccccce",
-        ratedFill: "#ffc35b",
-        readOnly: true
+    $('.reviews-slider').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 2,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpead: 3000,
+        responsive: [
+            {
+                breakpoint: 768,
+                settings: {
+                    slidesToShow: 1,
+                    slidesToScroll: 1
+                }
+            }
+        ]
     });
 
+    $('.licenses__inner').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1
+    });
 
-    function getTimeRemaining(endtime) {
-  const total = Date.parse(endtime) - Date.parse(new Date());
-  const seconds = Math.floor((total / 1000) % 60);
-  const minutes = Math.floor((total / 1000 / 60) % 60);
-  const hours = Math.floor((total / (1000 * 60 * 60)) % 24);
-  const days = Math.floor(total / (1000 * 60 * 60 * 24));
-  
-  return {
-    total,
-    days,
-    hours,
-    minutes,
-    seconds
-  };
-}
-
-function initializeClock(id, endtime) {
-  const clock = document.querySelector('.promo__clock');
-  const daysSpan = clock.querySelector('.promo__days');
-  const hoursSpan = clock.querySelector('.promo__hours');
-  const minutesSpan = clock.querySelector('.promo__minutes');
-  const secondsSpan = clock.querySelector('.promo__seconds');
-
-  function updateClock() {
-    const t = getTimeRemaining(endtime);
-
-    daysSpan.innerHTML = t.days;
-    hoursSpan.innerHTML = ('0' + t.hours).slice(-2);
-    minutesSpan.innerHTML = ('0' + t.minutes).slice(-2);
-    secondsSpan.innerHTML = ('0' + t.seconds).slice(-2);
-
-    if (t.total <= 0) {
-      clearInterval(timeinterval);
-    }
-  }
-
-  updateClock();
-  const timeinterval = setInterval(updateClock, 1000);
-}
-
-const deadline = $('.promo__clock').attr('data-time');
-initializeClock('promo__clock', deadline);
+     $('.about-slider').slick({
+        dots: true,
+        arrows: true,
+        infinite: true,
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        autoplay: true,
+        autoplaySpead: 3000
+    });
+   
 
 });

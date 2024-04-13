@@ -1,37 +1,40 @@
-$accent: #fe3e57;
-$default: #8d8d8d;
-$title: #29282d;
-$bg: #f6f6f6;
+$accent: #099dba;
+$default: #fff;
+$title: #474551;
+$bg: #f3fefe;
+$span: #046dbf;
 
-%quicksand-400 {
-  font-family: "Quicksand-Regular", sans-serif;
+%gilroy-400 {
+  font-family: "Gilroy-Regular", sans-serif;
   font-weight: 400;
 }
 
-%quicksand-500 {
-  font-family: "Quicksand-Medium", sans-serif;
+%gilroy-500 {
+  font-family: "Gilroy-Medium", sans-serif;
   font-weight: 500;
 }
 
-%roboto-400 {
-  font-family: "Roboto-Regular", sans-serif;
-  font-weight: 400;
+%gilroy-600 {
+  font-family: "Gilroy-Semibold", sans-serif;
+  font-weight: 600;
 }
 
-%roboto-700 {
-  font-family: "Roboto-Bold", sans-serif;
+%gilroy-700 {
+  font-family: "Gilroy-Bold", sans-serif;
   font-weight: 700;
 }
 
 %btn {
-  padding: 12px 26px;
-  color: #ffff;
+  border-radius: 30px;
+  border: 2px solid #099dba;
+  padding: 7.5px 39px;
+  color: $accent;
   text-transform: uppercase;
-  background-color: $accent;
-  @extend %roboto-400;
-  box-shadow: 0px 7px 20px 0px rgba(255, 17, 48, 0.3);
+  background-color: #fff;
+  @extend %gilroy-600;
 }
 
+// fb снипет для fancyBox
 @function max($numbers...) {
   @return m#{a}x(#{$numbers});
 }

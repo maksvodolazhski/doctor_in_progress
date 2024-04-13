@@ -1,40 +1,39 @@
-//Подключение шрифта Quicksand
+//Подключение шрифта Gilroy
 @font-face {
-  font-family: "Quicksand-Regular";
+  font-family: "Gilroy";
   font-weight: 400;
   font-style: normal;
-  src: local("Quicksand-Regular"),
-    url("../fonts/Quicksand-Regular.woof2") format("woof2"),
-    url("../fonts/Quicksand-Regular.woof") format("woof");
+  src: local("Gilroy-Regular"),
+    url("../fonts/Gilroy-Regular.woof2") format("woof2"),
+    url("../fonts/Gilroy-Regular.woof") format("woof");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Quicksand-Medium";
+  font-family: "Gilroy";
   font-weight: 500;
   font-style: normal;
-  src: local("Quicksand-Medium"),
-    url("../fonts/Quicksand-Medium.woof2") format("woof2"),
-    url("../fonts/Quicksand-Medium.woof") format("woof");
+  src: local("Gilroy-Medium"),
+    url("../fonts/Gilroy-Medium.woof2") format("woof2"),
+    url("../fonts/Gilroy-Medium.woof") format("woof");
   font-display: swap;
 }
 
-//Подключение шрифта Roboto
 @font-face {
-  font-family: "Roboto-Regular";
-  font-weight: 400;
+  font-family: "Gilroy";
+  font-weight: 600;
   font-style: normal;
-  src: local("Roboto-Regular"),
-    url("../fonts/Roboto-Regular.woof2") format("woof2"),
-    url("../fonts/Roboto-Regular.woof") format("woof");
+  src: local("Gilroy-Semibold"),
+    url("../fonts/Gilroy-Semibold.woof2") format("woof2"),
+    url("../fonts/Gilroy-Semibold.woof") format("woof");
   font-display: swap;
 }
 
 @font-face {
-  font-family: "Roboto-Bold";
+  font-family: "Gilroy";
   font-weight: 700;
   font-style: normal;
-  src: local("Roboto-Bold"), url("../fonts/Roboto-Bold.woof2") format("woof2"),
-    url("../fonts/Roboto-Bold.woof") format("woof");
+  src: local("Gilroy-Bold"), url("../fonts/Gilroy-Bold.woof2") format("woof2"),
+    url("../fonts/Gilroy-Bold.woof") format("woof");
   font-display: swap;
 }

@@ -4,9 +4,9 @@ body {
 }
 
 body {
-  font-size: 16px;
-  color: $default;
-  line-height: 26px;
+  font-size: 18px;
+  background-color: $default;
+  line-height: 140%;
   display: flex;
   flex-direction: column;
 }
@@ -16,73 +16,56 @@ body {
 }
 
 ._container {
-  max-width: 1200px;
+  max-width: 1320px;
   margin: 0 auto;
   padding: 0 15px;
 }
 
+@media (max-width: 1024px) {
+  ._container {
+    max-width: 1024px;
+    margin: 0 auto;
+    padding: 0 20px;
+  }
+}
+
 a {
   font-size: 16px;
-  color: $default;
+  color: $accent;
   line-height: 26px;
-  @extend %quicksand-500;
+  @extend %gilroy-500;
 }
 
 .title {
-  text-align: center;
-  font-size: 48px;
-  @extend %roboto-700;
-  line-height: 65px;
+  text-align: left;
+  font-size: 58px;
+  @extend %gilroy-700;
+  line-height: 120%;
   color: $title;
-  margin-bottom: 10px;
-  text-transform: uppercase;
+  margin-bottom: 30px;
+}
+
+.sub-title {
+  text-align: center;
+  font-size: 42px;
+  @extend %gilroy-500;
+  line-height: 120%;
+  margin-bottom: 30px;
+  color: $title;
+  margin-bottom: 30px;
 }
 
 .text {
   text-align: center;
-  max-width: 570px;
-  margin: 0 auto 55px;
+  max-width: 1066px;
+  color: $accent;
+  font-size: 27px;
+  @extend %gilroy-600;
+  line-height: 140%;
+  margin: 0 auto;
+  margin-bottom: 60px;
 }
 
-.breadcrumbs {
-  display: inline-flex;
-  justify-content: center;
-  padding-left: 25px;
-  position: relative;
-  &::before {
-    position: absolute;
-    content: "";
-    top: 4px;
-    left: 0px;
-    width: 16px;
-    height: 16px;
-    background-image: url("../images/icon/home_icon.svg");
-  }
-  &__list {
-    display: inline-flex;
-  }
-  &__item {
-    color: #727272;
-    padding-right: 40px;
-    position: relative;
-    &::after {
-      position: absolute;
-      background-image: url("../images/icon/right_icon.svg");
-      content: "";
-      top: 9px;
-      right: 15px;
-      width: 9px;
-      height: 10px;
-    }
-    &:last-child {
-      color: $accent;
-      padding-right: 0;
-      &::after {
-        display: none;
-      }
-    }
-  }
-  &__link {
-    color: inherit;
-  }
+.blue-text {
+  color: $span;
 }
